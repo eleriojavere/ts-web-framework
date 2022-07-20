@@ -11,9 +11,3 @@ export class Attributes<T> {
     Object.assign(this.data, update);
   }
 }
-
-const attributes = new Attributes<UserProps>({
-  id: 5,
-  age: 20,
-  name: 'Eleri',
-});
