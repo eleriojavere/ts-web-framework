@@ -1,5 +1,7 @@
+import { User } from '../models/User';
+
 export class UserForm {
-  constructor(public parent: Element) {}
+  constructor(public parent: Element, public model: User) {}
 
   eventsMap(): { [key: string]: () => void } {
     return {
@@ -16,7 +18,9 @@ export class UserForm {
   }
 
   template(): string {
-    return `<div><h1>User form</h1><input/><button>Click me</button></div>`;
+    return `<div><h1>User form</h1><div>name: ${this.model.get('name')} <div>age: ${this.model.get(
+      'age'
+    )}</div></div><input/><button>Click me</button></div>`;
   }
 
   bindEvents(fragment: DocumentFragment): void {
